@@ -9,7 +9,9 @@ module Rookie
       attr_accessor :release_version
 
       def initialize(release_version = nil, working_dir = Dir.pwd)
-        self.git = ::Git.open working_dir, :log => ::Logger.new(STDOUT)
+        logger = ::Logger.new STDOUT
+        logger.level = ::Logger::INFO
+        self.git = ::Git.open working_dir, :log => logger
         self.release_version = release_version
         yield self if block_given?
         define
