@@ -18,6 +18,7 @@ Gem::Specification.new('rookie') do |gem|
   gem.files = `git ls-files`.split "\n"
 
   gem.add_runtime_dependency 'rake'
+  gem.add_runtime_dependency 'git'
 
   gem.add_development_dependency 'bundler'
 
