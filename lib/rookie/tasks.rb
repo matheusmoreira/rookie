@@ -34,7 +34,7 @@ module Rookie
       task :clean => clean_tasks
 
       desc 'Release project'
-      task :release => release_tasks
+      task :release => release_tasks + clean_tasks
 
       task :default => :setup
     end
