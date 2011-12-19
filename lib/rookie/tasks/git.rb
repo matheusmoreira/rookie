@@ -66,7 +66,7 @@ module Rookie
 
           desc 'Release current version'
           task :release, :version, :remote, :branch do |task, args|
-            args.with_defaults version: release_version, remote: 'origin', branch: 'master'
+            args.with_defaults version: release_tag, remote: 'origin', branch: 'master'
             release! args[:version], args[:remote], args[:branch]
           end
         end
