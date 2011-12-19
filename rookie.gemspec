@@ -10,6 +10,7 @@ Gem::Specification.new('rookie') do |gem|
   gem.summary     = 'Simple Rake tasks that make life easier.'
   gem.description = gem.summary
   gem.homepage    = 'https://github.com/matheusmoreira/rookie'
+  gem.licenses    = %w(GPLv3)
 
   gem.author = 'Matheus Afonso Martins Moreira'
   gem.email  = 'matheus.a.m.moreira@gmail.com'
