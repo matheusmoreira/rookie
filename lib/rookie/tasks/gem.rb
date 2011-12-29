@@ -78,6 +78,7 @@ module Rookie
           desc 'Installs the gem locally and cleans up'
           task :setup => [ :install, :clean ]
         end
+        desc 'Same as gem:build'
         task :gem => 'gem:build'
       end
 
