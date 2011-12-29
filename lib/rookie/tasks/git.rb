@@ -11,6 +11,7 @@ module Rookie
       def initialize(release_version = nil, working_dir = Dir.pwd)
         logger = ::Logger.new STDOUT
         logger.level = ::Logger::INFO
+        logger.formatter = proc { |severity, datetime, progname, msg| "#{msg}\n" }
         self.git = ::Git.open working_dir, :log => logger
         self.release_version = release_version
         yield self if block_given?
