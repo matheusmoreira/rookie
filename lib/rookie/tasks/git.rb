@@ -72,7 +72,7 @@ module Rookie
         end
       end
 
-      private
+      protected
 
       def git=(repo)
         @git = repo
