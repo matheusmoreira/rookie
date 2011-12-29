@@ -24,7 +24,7 @@ module Rookie
       if gem
         setup_tasks << 'gem:setup'
         clean_tasks << 'gem:clean'
-        release_tasks << 'gem:push'
+        release_tasks << 'gem:release'
       end
 
       desc 'Setup project'
