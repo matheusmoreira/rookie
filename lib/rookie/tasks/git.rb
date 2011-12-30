@@ -6,13 +6,16 @@ module Rookie
   class Tasks < ::Rake::TaskLib
     class Git < ::Rake::TaskLib
 
-      attr_accessor :release_version
+      attr_accessor :release_version, :working_directory
+      attr_writer :logger
 
-      def initialize(release_version = nil, working_dir = Dir.pwd)
-        logger = ::Logger.new STDOUT
-        logger.level = ::Logger::INFO
-        logger.formatter = proc { |severity, datetime, progname, msg| "#{msg}\n" }
-        self.git = ::Git.open working_dir, :log => logger
+      def logger
+        @logger ||= create_logger
+      end
+
+      def initialize(release_version = nil, working_dir = Dir.pwd, logger = nil)
+        self.logger = logger
+        self.working_directory = working_dir
         self.release_version = release_version
         yield self if block_given?
         define
@@ -75,12 +78,15 @@ module Rookie
 
       protected
 
-      def git=(repo)
-        @git = repo
+      def git
+        @git ||= ::Git.open working_directory, :log => logger
       end
 
-      def git
-        @git
+      def create_logger
+        ::Logger.new(STDOUT).tap do |logger|
+          logger.level = ::Logger::INFO
+          logger.formatter = proc { |severity, datetime, progname, msg| "#{msg}\n" }
+        end
       end
 
     end
