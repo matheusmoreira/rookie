@@ -1,3 +1,4 @@
+require 'rookie/tasks/console'
 require 'rookie/tasks/gem'
 require 'rookie/tasks/git'
 require 'rake/tasklib'
@@ -5,11 +6,12 @@ require 'rake/tasklib'
 module Rookie
   class Tasks < ::Rake::TaskLib
 
-    attr_accessor :gem, :git
+    attr_accessor :gem, :git, :console
 
-    def initialize(gemspec = nil)
+    def initialize(gemspec = nil, opts = {})
       self.gem = Tasks::Gem.new gemspec
       self.git = Tasks::Git.new gem.spec.version.to_s
+      self.console = Tasks::Console.new gem.spec, opts
       yield self if block_given?
       define
     end
