@@ -50,6 +50,7 @@ module Rookie
 
       def define
         directory dir
+
         namespace :gem do
           desc 'Builds the gem from the specification'
           task :build => dir do
@@ -82,6 +83,7 @@ module Rookie
           desc 'Installs the gem locally and cleans up'
           task :setup => [ :install, :clean ]
         end
+
         desc 'Same as gem:build'
         task :gem => 'gem:build'
       end
