@@ -18,7 +18,7 @@ Putting this in your `Rakefile`:
 
     require 'rookie'
 
-    Rookie::Tasks.new 'simple.gemspec'
+    Rookie::Tasks.new('simple.gemspec').define_tasks!
 
 Gets you a whole set of nice commands to work with your gem. Run `rake -T` for
 details.
