@@ -8,7 +8,7 @@ module Rookie
 
     attr_accessor :gem, :git, :console
 
-    def initialize(gemspec = nil, opts = {})
+    def initialize(gemspec, opts = {})
       self.gem = Tasks::Gem.new gemspec
       self.git = Tasks::Git.new gem.spec.version.to_s
       self.console = Tasks::Console.new gem.spec, opts
