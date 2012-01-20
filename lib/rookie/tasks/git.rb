@@ -6,7 +6,10 @@ module Rookie
   class Tasks < ::Rake::TaskLib
     class Git < ::Rake::TaskLib
 
-      attr_accessor :release_version, :working_directory
+      attr_accessor :release_version
+
+      attr_accessor :working_directory
+
       attr_writer :logger
 
       def logger

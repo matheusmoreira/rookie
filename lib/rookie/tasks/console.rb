@@ -4,7 +4,10 @@ module Rookie
   class Tasks < ::Rake::TaskLib
     class Console < ::Rake::TaskLib
 
-      attr_accessor :spec, :program
+      attr_accessor :spec
+
+      attr_accessor :program
+
       attr_writer :command
 
       def command

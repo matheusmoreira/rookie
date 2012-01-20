@@ -6,7 +6,11 @@ require 'rake/tasklib'
 module Rookie
   class Tasks < ::Rake::TaskLib
 
-    attr_accessor :gem, :git, :console
+    attr_accessor :gem
+
+    attr_accessor :git
+
+    attr_accessor :console
 
     def initialize(gemspec, opts = {})
       self.gem = Tasks::Gem.new gemspec

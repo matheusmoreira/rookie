@@ -5,7 +5,9 @@ module Rookie
   class Tasks < ::Rake::TaskLib
     class Gem < ::Rake::TaskLib
 
-      attr_reader :spec, :dir
+      attr_reader :spec
+
+      attr_reader :dir
 
       def spec=(gemspec)
         @spec = case gemspec
