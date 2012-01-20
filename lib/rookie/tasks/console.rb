@@ -27,7 +27,7 @@ module Rookie
       end
 
       def generate_command_string
-        program.dup.tap do |command_string|
+        program.to_s.dup.tap do |command_string|
           spec.require_paths.each do |path|
             command_string << ' -I ' << path
           end
