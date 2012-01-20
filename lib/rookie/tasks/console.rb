@@ -20,7 +20,7 @@ module Rookie
       end
 
       def define
-        desc 'Starts an interactive ruby session with your gem loaded'
+        desc 'Starts an interactive ruby session with the gem loaded'
         task :console do
           sh command
         end
