@@ -1,5 +1,5 @@
-require 'rake/tasklib'
 require 'fileutils'
+require 'rake/tasklib'
 
 module Rookie
   class Tasks < ::Rake::TaskLib
