@@ -26,8 +26,12 @@ module Rookie
         define
       end
 
+      def gem_file_name
+        "#{spec.name}-#{spec.version}.gem"
+      end
+
       def gem_file
-        File.join dir, "#{spec.name}-#{spec.version}.gem"
+        File.join dir, gem_file_name
       end
 
       def build_gem
