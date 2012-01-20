@@ -16,7 +16,6 @@ module Rookie
         self.program = opts.fetch :program, :irb
         self.command = opts.fetch :command, nil
         yield self if block_given?
-        define_tasks!
       end
 
       def define_tasks!

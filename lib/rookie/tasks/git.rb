@@ -18,7 +18,6 @@ module Rookie
         self.working_directory = working_dir
         self.release_version = release_version
         yield self if block_given?
-        define_tasks!
       end
 
       def release_tag(version = release_version)

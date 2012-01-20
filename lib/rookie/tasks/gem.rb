@@ -23,7 +23,6 @@ module Rookie
         self.spec = gemspec
         self.dir = gem_dir
         yield self if block_given?
-        define_tasks!
       end
 
       def gem_file_name
