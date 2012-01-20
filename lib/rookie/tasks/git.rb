@@ -71,6 +71,8 @@ module Rookie
       # Returns whether the repository already contains the given tag name.
       def already_tagged?(tag_name)
         git.tag tag_name
+      rescue ::Git::GitTagNameDoesNotExist
+        false
       end
 
       # Defines the git tasks.
