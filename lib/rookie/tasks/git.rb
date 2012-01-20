@@ -44,7 +44,7 @@ module Rookie
       end
 
       def already_tagged?(tag_name)
-        git.tag tag_name rescue nil
+        git.tag tag_name
       end
 
       def define
