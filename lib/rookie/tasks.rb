@@ -4,14 +4,25 @@ require 'rookie/tasks/git'
 require 'rake/tasklib'
 
 module Rookie
+
+  # Provides many useful tasks, like the Gem, Git and Console tasks.
+  #
+  # Don't forget to call #define_tasks! after creating an instance of this
+  # class!
   class Tasks < ::Rake::TaskLib
 
+    # The Gem task.
     attr_accessor :gem
 
+    # The Git task.
     attr_accessor :git
 
+    # The Console task.
     attr_accessor :console
 
+    # Initializes the tasks with the given gem specification and options.
+    #
+    # Yields the new instance if given a block.
     def initialize(gemspec, opts = {})
       self.gem = Tasks::Gem.new gemspec
       self.git = Tasks::Git.new gem.spec.version.to_s
@@ -19,6 +30,7 @@ module Rookie
       yield self if block_given?
     end
 
+    # Defines the tasks for all initialized (not +nil+) tasks.
     def define_tasks!
       setup_tasks, clean_tasks, release_tasks = [], [], []
 
@@ -49,4 +61,5 @@ module Rookie
     end
 
   end
+
 end
