@@ -12,7 +12,7 @@ module Rookie
           when ::Gem::Specification
             gemspec
           when String
-            ::Gem::Specification.load gemspec if gemspec and File.readable? gemspec
+            ::Gem::Specification.load gemspec if File.readable? gemspec
           else
             nil
         end
