@@ -9,12 +9,9 @@ module Rookie
 
       def spec=(gemspec)
         @spec = case gemspec
-          when ::Gem::Specification
-            gemspec
-          when String
-            ::Gem::Specification.load gemspec if File.readable? gemspec
-          else
-            nil
+          when ::Gem::Specification then gemspec
+          when String then ::Gem::Specification.load gemspec if File.readable? gemspec
+          else nil
         end
       end
 
