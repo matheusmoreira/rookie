@@ -18,7 +18,7 @@ module Rookie
         self.working_directory = working_dir
         self.release_version = release_version
         yield self if block_given?
-        define
+        define_tasks!
       end
 
       def release_tag(version = release_version)
@@ -47,7 +47,7 @@ module Rookie
         git.tag tag_name
       end
 
-      def define
+      def define_tasks!
         namespace :git do
           desc 'Tags latest commit with the given tag name'
           task :tag, :tag_name do |task, args|

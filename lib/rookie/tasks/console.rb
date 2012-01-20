@@ -16,10 +16,10 @@ module Rookie
         self.program = opts.fetch :program, :irb
         self.command = opts.fetch :command, nil
         yield self if block_given?
-        define
+        define_tasks!
       end
 
-      def define
+      def define_tasks!
         desc 'Starts an interactive ruby session with the gem loaded'
         task :console do
           sh command

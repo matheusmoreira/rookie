@@ -13,10 +13,10 @@ module Rookie
       self.git = Tasks::Git.new gem.spec.version.to_s
       self.console = Tasks::Console.new gem.spec, opts
       yield self if block_given?
-      define
+      define_tasks!
     end
 
-    def define
+    def define_tasks!
       setup_tasks, clean_tasks, release_tasks = [], [], []
 
       if git

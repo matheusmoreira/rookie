@@ -23,7 +23,7 @@ module Rookie
         self.spec = gemspec
         self.dir = gem_dir
         yield self if block_given?
-        define
+        define_tasks!
       end
 
       def gem_file_name
@@ -48,7 +48,7 @@ module Rookie
         FileUtils.rm_rf dir
       end
 
-      def define
+      def define_tasks!
         directory dir
 
         namespace :gem do
