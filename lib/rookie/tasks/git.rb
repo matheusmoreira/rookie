@@ -22,11 +22,11 @@ module Rookie
       end
 
       def release_tag(version = release_version)
-        "v#{version.to_s}"
+        "v#{version}"
       end
 
       def tag!(tag_name)
-        raise "Tag '#{tag_name.inspect}' is invalid" if tag_name.nil? or tag_name.empty?
+        raise "Tag '#{tag_name}' is invalid" if tag_name.nil? or tag_name.empty?
         if already_tagged? tag_name
           raise "Tag '#{tag_name}' already in repository"
         else
