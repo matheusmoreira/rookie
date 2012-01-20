@@ -2,6 +2,18 @@
 
 Simple Rake tasks that make life easier.
 
+# Installation
+
+Latest version:
+
+    gem install rookie
+
+From source:
+
+    git clone git://github.com/matheusmoreira/rookie.git
+
+# Introduction
+
 Putting this in your `Rakefile`:
 
     require 'rookie'
