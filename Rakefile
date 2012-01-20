@@ -1,3 +1,3 @@
 require 'rookie'
 
-Rookie::Tasks.new 'rookie.gemspec'
+Rookie::Tasks.new('rookie.gemspec').define_tasks!
