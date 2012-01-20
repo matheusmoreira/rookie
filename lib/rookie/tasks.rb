@@ -19,14 +19,18 @@ module Rookie
       setup_tasks, clean_tasks, release_tasks = [], [], []
 
       if git
+        git.define_tasks!
         release_tasks << 'git:release'
       end
 
       if gem
+        gem.define_tasks!
         setup_tasks << 'gem:setup'
         clean_tasks << 'gem:clean'
         release_tasks << 'gem:release'
       end
+
+      console.define_tasks! if console
 
       desc 'Setup project'
       task :setup => setup_tasks
