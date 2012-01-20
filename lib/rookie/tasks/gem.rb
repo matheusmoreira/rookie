@@ -61,7 +61,7 @@ module Rookie
             sh gem :push
           end
 
-          desc 'Same as gem:release'
+          desc 'Same as gem:push'
           task :release => :push
 
           desc 'Installs the gem locally'
