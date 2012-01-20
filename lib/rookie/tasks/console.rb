@@ -13,7 +13,7 @@ module Rookie
 
       def initialize(spec, opts = {})
         self.spec = spec
-        self.program = opts.fetch :program, 'irb'
+        self.program = opts.fetch :program, :irb
         self.command = opts.fetch :command, nil
         yield self if block_given?
         define
