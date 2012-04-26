@@ -23,7 +23,7 @@ module Rookie
       def spec=(gemspec)
         @spec = case gemspec
           when ::Gem::Specification then gemspec
-          when String then ::Gem::Specification.load gemspec if File.readable? gemspec
+          when String then ::Gem::Specification.load gemspec
           else nil
         end
       end
