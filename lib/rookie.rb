@@ -1,4 +1,4 @@
-# A collection of Rake tasks.
+# Utilities to create and work with Ruby gems.
 module Rookie
 end
 
