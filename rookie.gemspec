@@ -4,7 +4,7 @@ $:.unshift File.expand_path('../lib', __FILE__)
 
 require 'rookie/version'
 
-Gem::Specification.new('rookie') do |gem|
+Gem::Specification.new 'rookie' do |gem|
 
   gem.version     = Rookie::Version::STRING
   gem.summary     = 'Simple Rake tasks that make life easier.'
