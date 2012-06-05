@@ -9,6 +9,7 @@ class << Rookie
   # Location of the Rookie gem.
   #
   # @return [String] the absolute path to the Rookie gem
+  # @since 0.4.0
   def root
     File.expand_path '..', File.dirname(__FILE__)
   end
