@@ -14,6 +14,14 @@ class << Rookie
     File.expand_path '..', File.dirname(__FILE__)
   end
 
+  # The gem directory, relative to the root.
+  #
+  # @return [String] the absolute path to the gem directory
+  # @since 0.4.0
+  def gem
+    File.join root, 'gem'
+  end
+
 end
 
 require 'rookie/tasks'
