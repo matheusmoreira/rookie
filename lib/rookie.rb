@@ -30,6 +30,14 @@ class << Rookie
     File.join gem, 'licenses'
   end
 
+  # The template directory, relative to the gem directory.
+  #
+  # @return [String] the absolute path to the template directory
+  # @since 0.4.0
+  def template
+    File.join gem, 'template'
+  end
+
 end
 
 require 'rookie/tasks'
