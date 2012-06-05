@@ -21,5 +21,7 @@ Gem::Specification.new 'rookie' do |gem|
   gem.add_runtime_dependency 'rake'
 
   gem.add_development_dependency 'bundler'
+  gem.add_development_dependency 'yard'
+  gem.add_development_dependency 'redcarpet' # yard uses it for markdown formatting
 
 end
