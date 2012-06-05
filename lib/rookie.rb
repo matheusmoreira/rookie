@@ -1,4 +1,6 @@
 # Utilities to create and work with Ruby gems.
+#
+# @author Matheus Afonso Martins Moreira
 module Rookie
 end
 
