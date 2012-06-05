@@ -22,6 +22,14 @@ class << Rookie
     File.join root, 'gem'
   end
 
+  # The licenses directory, relative to the gem directory.
+  #
+  # @return [String] the absolute path to the licenses directory
+  # @since 0.4.0
+  def licenses
+    File.join gem, 'licenses'
+  end
+
 end
 
 require 'rookie/tasks'
