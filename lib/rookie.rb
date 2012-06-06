@@ -41,4 +41,3 @@ class << Rookie
 end
 
 require 'rookie/tasks'
-require 'rookie/version'
