@@ -40,4 +40,5 @@ class << Rookie
 
 end
 
+require 'rookie/gem'
 require 'rookie/tasks'
