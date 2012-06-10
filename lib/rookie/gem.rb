@@ -10,7 +10,8 @@ module Rookie
 
     root '../..'
 
-    specification ::Gem::Specification.load(root.join 'rookie.gemspec')
+    gemspec_path = root.join('rookie.gemspec').to_s
+    specification ::Gem::Specification.load gemspec_path
 
   end
 
