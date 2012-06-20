@@ -3,7 +3,10 @@
 
 Gem::Specification.new 'rookie' do |gem|
 
-  gem.version = File.read('rookie.version').chomp
+  current_directory = File.dirname __FILE__
+  version_file = File.expand_path "#{gem.name}.version", current_directory
+
+  gem.version = File.read(version_file).chomp
 
   gem.summary = 'Simple Rake tasks that make life easier.'
   gem.homepage = 'https://github.com/matheusmoreira/rookie'
