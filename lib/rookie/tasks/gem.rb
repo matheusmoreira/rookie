@@ -61,7 +61,14 @@ module Rookie
       # Builds the gem from the specification and moves it to the gem directory.
       def build_gem
         FileUtils.mkdir_p dir
-        gem = ::Gem::Builder.new(spec).build
+
+        if RUBY_VERSION >= '2.0.0'
+          require 'rubygems/package'
+          gem = ::Gem::Package.build(spec)
+        else
+          gem = ::Gem::Builder.new(spec).build
+        end
+
         FileUtils.mv gem, dir
       end
 
